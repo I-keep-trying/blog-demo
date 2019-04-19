@@ -1,10 +1,36 @@
 @import "../node_modules/bootstrap/scss/mixins";
 
+$enable-shadows:                              true;
+$enable-gradients:                            true;
+
+$border-width:                0px;
+$border-color:                $gray-300;
+$body-bg:                   $white;
+
+@each $color, $value in $theme-colors {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+@if $enable-gradients {
+  @each $color, $value in $theme-colors {
+    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+  }
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+//**********************************************//
 
 @mixin button-variant($color, $background, $border) {
     color: $color;
     border-color: $border;
-    background-color: $background;
+    background-color: $indigo;
     &.focus,
     &:focus {
       color: $color;
@@ -211,13 +237,13 @@ a {
 
   // _masthead
 
-header.masthead {
+  header.masthead {
     margin-bottom: 50px;
     background: no-repeat center center;
     background-color: $gray-600;
     background-attachment: scroll;
     position: relative;
-    background: url('/img/1000.jpg') fixed;
+    background: url('https://github.com/I-keep-trying/blog-demo/blob/master/img/1000.jpg?raw=true') fixed;
     @include background-cover;
     .overlay {
       position: absolute;

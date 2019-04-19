@@ -5,26 +5,25 @@
   "scripts": {
     "start": "gulp watch"
   },
+    "browserslist": [
+      "last 2 versions"
+    ],
   "description": "Blog Demo is a Medium inspired blog theme built with Bootstrap.",
   "keywords": [
     "css",
     "sass",
     "html",
     "responsive"
-    ],
-  "homepage": "https://startbootstrap.com/template-overviews/clean-blog",
+  ],
+  "homepage": "https://i-keep-trying.github.io/blog-demo",
   "bugs": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap-clean-blog/issues",
-    "email": "feedback@startbootstrap.com"
+    "url": "https://github.com/I-keep-trying/blog-demo/issues"
   },
   "license": "MIT",
-  "author": "Start Bootstrap",
-  "contributors": [
-    "David Miller (http://davidmiller.io/)"
-  ],
+  "author": "Andrea Crego",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BlackrockDigital/startbootstrap-clean-blog.git"
+    "url": "git+https://github.com/I-keep-trying/blog-demo.git"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.8.1",
@@ -32,7 +31,9 @@
     "jquery": "3.3.1"
   },
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "browser-sync": "2.26.3",
+    "cssnano": "^4.1.10",
     "del": "4.0.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
@@ -43,8 +44,10 @@
     "gulp-clean-css": "4.0.0",
     "gulp-header": "2.0.7",
     "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "3.0.2",
     "merge-stream": "^1.0.1",
     "prettier": "1.17.0"

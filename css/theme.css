@@ -8,14 +8,14 @@
 }
 
 .btn-primary {
-  background-color: #0085A1;
-  border-color: #0085A1;
+  background-color: #6610f2;
+  border-color: #6610f2;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #00657b !important;
-  border-color: #00657b !important;
+  background-color: #560bd0 !important;
+  border-color: #560bd0 !important;
 }
 
 .btn-lg, .btn-group-lg > .btn {
@@ -71,7 +71,7 @@ blockquote {
 
 ::selection {
   color: #fff;
-  background: #0085A1;
+  background: #6610f2;
   text-shadow: none;
 }
 
@@ -91,7 +91,7 @@ img::-moz-selection {
 
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: #6610f2;
 }
 
 .post-preview > a > .post-title {
@@ -120,7 +120,7 @@ img::-moz-selection {
 
 .post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
   text-decoration: underline;
-  color: #0085A1;
+  color: #6610f2;
 }
 
 @media only screen and (min-width: 768px) {
@@ -10910,6 +10910,134 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.bg-primary {
+  background-color: #0085A1 !important;
+}
+
+a.bg-primary:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: #005b6e !important;
+}
+
+.bg-secondary {
+  background-color: #868e96 !important;
+}
+
+a.bg-secondary:hover, a.bg-secondary:focus,
+button.bg-secondary:hover,
+button.bg-secondary:focus {
+  background-color: #6c757d !important;
+}
+
+.bg-success {
+  background-color: #68ff4a !important;
+}
+
+a.bg-success:hover, a.bg-success:focus,
+button.bg-success:hover,
+button.bg-success:focus {
+  background-color: #3dff17 !important;
+}
+
+.bg-info {
+  background-color: #16b8d1 !important;
+}
+
+a.bg-info:hover, a.bg-info:focus,
+button.bg-info:hover,
+button.bg-info:focus {
+  background-color: #118fa3 !important;
+}
+
+.bg-warning {
+  background-color: #ffee07 !important;
+}
+
+a.bg-warning:hover, a.bg-warning:focus,
+button.bg-warning:hover,
+button.bg-warning:focus {
+  background-color: #d3c500 !important;
+}
+
+.bg-danger {
+  background-color: #df0319 !important;
+}
+
+a.bg-danger:hover, a.bg-danger:focus,
+button.bg-danger:hover,
+button.bg-danger:focus {
+  background-color: #ad0213 !important;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+a.bg-light:hover, a.bg-light:focus,
+button.bg-light:hover,
+button.bg-light:focus {
+  background-color: #dae0e5 !important;
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+a.bg-dark:hover, a.bg-dark:focus,
+button.bg-dark:hover,
+button.bg-dark:focus {
+  background-color: #1d2124 !important;
+}
+
+.bg-gradient-primary {
+  background: #0085A1 -webkit-gradient(linear, left top, left bottom, from(#2697af), to(#0085A1)) repeat-x !important;
+  background: #0085A1 linear-gradient(180deg, #2697af, #0085A1) repeat-x !important;
+}
+
+.bg-gradient-secondary {
+  background: #868e96 -webkit-gradient(linear, left top, left bottom, from(#989fa6), to(#868e96)) repeat-x !important;
+  background: #868e96 linear-gradient(180deg, #989fa6, #868e96) repeat-x !important;
+}
+
+.bg-gradient-success {
+  background: #68ff4a -webkit-gradient(linear, left top, left bottom, from(#7fff65), to(#68ff4a)) repeat-x !important;
+  background: #68ff4a linear-gradient(180deg, #7fff65, #68ff4a) repeat-x !important;
+}
+
+.bg-gradient-info {
+  background: #16b8d1 -webkit-gradient(linear, left top, left bottom, from(#39c3d8), to(#16b8d1)) repeat-x !important;
+  background: #16b8d1 linear-gradient(180deg, #39c3d8, #16b8d1) repeat-x !important;
+}
+
+.bg-gradient-warning {
+  background: #ffee07 -webkit-gradient(linear, left top, left bottom, from(#fff12c), to(#ffee07)) repeat-x !important;
+  background: #ffee07 linear-gradient(180deg, #fff12c, #ffee07) repeat-x !important;
+}
+
+.bg-gradient-danger {
+  background: #df0319 -webkit-gradient(linear, left top, left bottom, from(#e4293c), to(#df0319)) repeat-x !important;
+  background: #df0319 linear-gradient(180deg, #e4293c, #df0319) repeat-x !important;
+}
+
+.bg-gradient-light {
+  background: #f8f9fa -webkit-gradient(linear, left top, left bottom, from(#f9fafb), to(#f8f9fa)) repeat-x !important;
+  background: #f8f9fa linear-gradient(180deg, #f9fafb, #f8f9fa) repeat-x !important;
+}
+
+.bg-gradient-dark {
+  background: #343a40 -webkit-gradient(linear, left top, left bottom, from(#52585d), to(#343a40)) repeat-x !important;
+  background: #343a40 linear-gradient(180deg, #52585d, #343a40) repeat-x !important;
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
 body {
   font-size: 20px;
   color: #212529;
@@ -11034,7 +11162,7 @@ header.masthead {
   background-color: #868e96;
   background-attachment: scroll;
   position: relative;
-  background: url("/img/1000.jpg") fixed;
+  background: url("https://picsum.photos/1000/?random") fixed;
   background-size: cover;
 }
 
@@ -11126,6 +11254,10 @@ header.masthead .post-heading .meta a {
   header.masthead .post-heading .subheading {
     font-size: 30px;
   }
+}
+
+.about-img {
+  background: url("https://picsum.photos/1001/?random") fixed;
 }
 
 .floating-label-form-group {

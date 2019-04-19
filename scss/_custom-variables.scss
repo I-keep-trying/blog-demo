@@ -48,14 +48,14 @@ $gradient1: linear-gradient(to right, #f79009, #ce096c 100%);
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-color: $primary;
+  background-color: $indigo;
+  border-color: $indigo;
   &:hover,
   &:focus,
   &:active {
     color: $white;
-    background-color: darken($primary, 7.5) !important;
-    border-color: darken($primary, 7.5) !important;
+    background-color: darken($indigo, 7.5) !important;
+    border-color: darken($indigo, 7.5) !important;
   }
 }
   
@@ -113,13 +113,13 @@ blockquote {
   
 ::-moz-selection {
   color: $white;
-  background: $primary;
+  background: $indigo;
   text-shadow: none;
 }
 
 ::selection {
   color: $white;
-  background: $primary;
+  background: $indigo;
   text-shadow: none;
 }
   
@@ -141,7 +141,7 @@ img::-moz-selection {
       &:focus,
       &:hover {
         text-decoration: none;
-        color: $primary;
+        color: $indigo;
       }
       > .post-title {
         font-size: 30px;
@@ -165,7 +165,7 @@ img::-moz-selection {
         &:focus,
         &:hover {
           text-decoration: underline;
-          color: $primary;
+          color: $indigo;
         }
       }
     }

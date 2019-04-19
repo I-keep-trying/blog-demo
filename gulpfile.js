@@ -1,18 +1,26 @@
 'use strict'
 
 // Load plugins
-const autoprefixer = require('gulp-autoprefixer')
 const browsersync = require('browser-sync').create()
 const cleanCSS = require('gulp-clean-css')
 const del = require('del')
 const gulp = require('gulp')
-const header = require('gulp-header')
+const autoprefixer = require('autoprefixer')
+const sourcemaps = require('gulp-sourcemaps')
+const cssnano = require('cssnano')
+const postcss = require('gulp-postcss')
 const merge = require('merge-stream')
 const plumber = require('gulp-plumber')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 const uglify = require('gulp-uglify')
+const { src, dest } = require('gulp')
 
+// File paths
+const files = {
+  scssPath: '/scss/**/*.scss',
+  jsPath: '/js/**/*.js',
+}
 
 // BrowserSync
 function browserSync(done) {
@@ -22,7 +30,7 @@ function browserSync(done) {
     },
     port: 3000,
     notify: false,
-    browser: ["chrome", "iexplore", "firefox"],
+    browser: ['chrome'],
   })
   done()
 }
@@ -45,41 +53,38 @@ function modules() {
     .src('./node_modules/bootstrap/dist/**/*')
     .pipe(gulp.dest('./vendor/bootstrap'))
   // Font Awesome
-  var fontAwesome = gulp
-    .src('./node_modules/@fortawesome/**/*')
-    .pipe(gulp.dest('./vendor'))
+  var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*').pipe(gulp.dest('./vendor'))
   // jQuery
-  var jquery = gulp
-    .src([
-      './node_modules/jquery/dist/*',
-    ])
-    .pipe(gulp.dest('./vendor/jquery'))
+  var jquery = gulp.src(['./node_modules/jquery/dist/*']).pipe(gulp.dest('./vendor/jquery'))
   return merge(bootstrap, fontAwesome, jquery)
 }
 
 // CSS task
-function css() {
-  return gulp
-    .src('./scss/**/*.scss')
-    .pipe(plumber())
+// SCSS Sourcemapping
+function scssTask() {
+  return src(files.scssPath)
+    .pipe(sourcemaps.init())
     .pipe(
       sass({
         outputStyle: 'expanded',
         includePaths: './node_modules',
-      }),
+      })
     )
     .on('error', sass.logError)
     .pipe(
-      autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false,
-      }),
+      postcss([
+        autoprefixer({
+          cascade: false,
+        }),
+        cssnano(),
+      ])
     )
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./css'))
     .pipe(
       rename({
         suffix: '.min',
-      }),
+      })
     )
     .pipe(cleanCSS())
     .pipe(gulp.dest('./css'))
@@ -89,17 +94,12 @@ function css() {
 // JS task
 function js() {
   return gulp
-    .src([
-      './js/*.js',
-      '!./js/*.min.js',
-      '!./js/contact_me.js',
-      '!./js/jqBootstrapValidation.js',
-    ])
+    .src(['./js/*.js', '!./js/*.min.js', '!./js/contact_me.js', '!./js/jqBootstrapValidation.js'])
     .pipe(uglify())
     .pipe(
       rename({
         suffix: '.min',
-      }),
+      })
     )
     .pipe(gulp.dest('./js'))
     .pipe(browsersync.stream())
@@ -107,18 +107,18 @@ function js() {
 
 // Watch files
 function watchFiles() {
-  gulp.watch('./scss/**/*', css)
+  gulp.watch('./scss/**/*', scssTask)
   gulp.watch('./js/**/*', js)
-  gulp.watch('./**/*.html', browserSyncReload)
+  gulp.watch('./*.html', browserSyncReload)
 }
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules)
-const build = gulp.series(vendor, gulp.parallel(css, js))
+const build = gulp.series(vendor, gulp.parallel(scssTask, js))
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync))
 
 // Export tasks
-exports.css = css
+exports.scssTask = scssTask
 exports.js = js
 exports.clean = clean
 exports.vendor = vendor
