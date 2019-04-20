@@ -37,15 +37,14 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
+$indigo-dark:  #470ca5;
+
 $gradient1: linear-gradient(to right, #f79009, #ce096c 100%);
 
-.text-color {
-  line-height: 2;
-  background: $gradient1;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+$border-width:                0px;
+$border-color:                $gray-300;
+$body-bg:                   $white;
+
 
 .btn-primary {
   background-color: $indigo;

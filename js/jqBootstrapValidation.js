@@ -439,13 +439,7 @@
           );
           $this.bind(
             [
-              "keyup",
-              "focus",
-              "blur",
-              "click",
-              "keydown",
-              "keypress",
-              "change"
+              "blur"
             ].join(".validation ") + ".validation",
             function(e, params) {
 
@@ -817,7 +811,7 @@
         name: "Validemail",
         type: "regex",
         regex: "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\.[A-Za-z]{2,4}",
-        message: "Not a valid email address<!-- data-validator-validemail-message to override -->"
+        message: "Please double-check your email address, the format seems to be off?<!-- data-validator-validemail-message to override -->"
       },
       passwordagain: {
         name: "Passwordagain",

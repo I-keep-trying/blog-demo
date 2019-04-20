@@ -1,26 +1,17 @@
 'use strict'
 
 // Load plugins
+const autoprefixer = require('gulp-autoprefixer')
 const browsersync = require('browser-sync').create()
 const cleanCSS = require('gulp-clean-css')
 const del = require('del')
 const gulp = require('gulp')
-const autoprefixer = require('autoprefixer')
-const sourcemaps = require('gulp-sourcemaps')
-const cssnano = require('cssnano')
-const postcss = require('gulp-postcss')
 const merge = require('merge-stream')
-const plumber = require('gulp-plumber')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 const uglify = require('gulp-uglify')
-const { src, dest } = require('gulp')
-
-// File paths
-const files = {
-  scssPath: '/scss/**/*.scss',
-  jsPath: '/js/**/*.js',
-}
+const exec = require('child_process').exec // run command-line programs from gulp
+const execSync = require('child_process').execSync // command-line reports
 
 // BrowserSync
 function browserSync(done) {
@@ -30,7 +21,7 @@ function browserSync(done) {
     },
     port: 3000,
     notify: false,
-    browser: ['chrome'],
+    browser: ['chrome', 'iexplore'],
   })
   done()
 }
@@ -50,7 +41,7 @@ function clean() {
 function modules() {
   // Bootstrap
   var bootstrap = gulp
-    .src('./node_modules/bootstrap/dist/**/*')
+    .src('./node_modules/bootstrap/scss/**/*')
     .pipe(gulp.dest('./vendor/bootstrap'))
   // Font Awesome
   var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*').pipe(gulp.dest('./vendor'))
@@ -60,26 +51,23 @@ function modules() {
 }
 
 // CSS task
-// SCSS Sourcemapping
-function scssTask() {
-  return src(files.scssPath)
-    .pipe(sourcemaps.init())
+function css() {
+  return gulp
+    .src('./scss/**/*.scss')
     .pipe(
       sass({
+        sourcemaps: true,
         outputStyle: 'expanded',
         includePaths: './node_modules',
       })
     )
     .on('error', sass.logError)
     .pipe(
-      postcss([
-        autoprefixer({
-          cascade: false,
-        }),
-        cssnano(),
-      ])
+      autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false,
+      })
     )
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./css'))
     .pipe(
       rename({
@@ -94,7 +82,7 @@ function scssTask() {
 // JS task
 function js() {
   return gulp
-    .src(['./js/*.js', '!./js/*.min.js', '!./js/contact_me.js', '!./js/jqBootstrapValidation.js'])
+    .src(['./js/*.js'])
     .pipe(uglify())
     .pipe(
       rename({
@@ -107,18 +95,28 @@ function js() {
 
 // Watch files
 function watchFiles() {
-  gulp.watch('./scss/**/*', scssTask)
+  gulp.watch('./scss/**/*', css)
   gulp.watch('./js/**/*', js)
-  gulp.watch('./*.html', browserSyncReload)
+  gulp.watch('./**/*.html', browserSyncReload)
 }
+
+//git commit
+const gitConfig = 'git add . && git commit -m "netlify deploy" && git push'
+
+function git() {
+  return gulp.pipe(exec(gitConfig))
+}
+const commit = gulp.series(git)
+exports.commit = commit
+exports.git = git
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules)
-const build = gulp.series(vendor, gulp.parallel(scssTask, js))
+const build = gulp.series(vendor, gulp.parallel(css, js))
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync))
 
 // Export tasks
-exports.scssTask = scssTask
+exports.css = css
 exports.js = js
 exports.clean = clean
 exports.vendor = vendor

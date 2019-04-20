@@ -1,29 +1,5 @@
-@import "../node_modules/bootstrap/scss/mixins";
+//@import "/vendor/bootstrap/scss/mixins";
 
-$enable-shadows:                              true;
-$enable-gradients:                            true;
-
-$border-width:                0px;
-$border-color:                $gray-300;
-$body-bg:                   $white;
-
-@each $color, $value in $theme-colors {
-  @include bg-variant(".bg-#{$color}", $value);
-}
-
-@if $enable-gradients {
-  @each $color, $value in $theme-colors {
-    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
-  }
-}
-
-.bg-white {
-  background-color: $white;
-}
-
-.bg-transparent {
-  background-color: transparent;
-}
 
 //**********************************************//
 
@@ -124,26 +100,45 @@ a {
 }
 
 .btn {
-    font-size: 14px;
-    font-weight: 800;
-    padding: 15px 25px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 0;
-    @include sans-serif-font;
-  }
+  font-size: 14px;
+  font-weight: 800;
+  padding: 15px 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 0;
+  @include sans-serif-font;
+  border-image-width: 0;
+  background-color: $indigo;
+  background-image: none;
+}
 
+.btn:hover {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 15px 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 0;
+  @include sans-serif-font;
+  border-image-width: 0;
+  background-color: $indigo-dark;
+  background-image: none;
+}
+  
+.fa-stack:hover {
+  color: $indigo;
+}
 // _navbar
 
 #mainNav {
-    position: absolute;
-    border-bottom: 1px solid $gray-200;
-    background-color: white;
-    @include sans-serif-font;
-    .navbar-brand {
-      font-weight: 800;
-      color: $gray-800;
-    }
+  position: absolute;
+  border-bottom: 1px solid $gray-200;
+  background-color: white;
+  @include sans-serif-font;
+.navbar-brand {
+  font-weight: 800;
+  color: $gray-800;
+}
     .navbar-toggler {
       font-size: 12px;
       font-weight: 800;
@@ -169,7 +164,7 @@ a {
         color: $black;
         &:focus,
         &:hover {
-          color: fade-out($white, .2);
+          color: fade-out($white, .3);
         }
       }
       .navbar-nav {
@@ -236,91 +231,218 @@ a {
   }
 
   // _masthead
-
-  header.masthead {
-    margin-bottom: 50px;
-    background: no-repeat center center;
-    background-color: $gray-600;
-    background-attachment: scroll;
-    position: relative;
-    background: url('https://github.com/I-keep-trying/blog-demo/blob/master/img/1000.jpg?raw=true') fixed;
-    @include background-cover;
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: $white;
-      opacity: 0.2;
-    }
-    .page-heading,
-    .post-heading,
-    .site-heading {
-      padding: 200px 0 150px;
-      color: rgb(2, 2, 2);
-      @media only screen and (min-width: 768px) {
-        padding: 200px 0;
-      }
-    }
-    .page-heading,
-    .site-heading {
-      text-align: center;
-      h1 {
-        font-size: 50px;
-        margin-top: 0;
-      }
-      .subheading {
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 1.1;
-        display: block;
-        margin: 10px 0 0;
-        @include sans-serif-font;
-      }
-      @media only screen and (min-width: 768px) {
-        h1 {
-          font-size: 80px;
-        }
-      }
-    }
-    .post-heading {
-      h1 {
-        font-size: 35px;
-      }
-      .meta,
-      .subheading {
-        line-height: 1.1;
-        display: block;
-      }
-      .subheading {
-        font-size: 24px;
-        font-weight: 600;
-        margin: 10px 0 30px;
-        @include sans-serif-font;
-      }
-      .meta {
-        font-size: 20px;
-        font-weight: 300;
-        font-style: italic;
-        @include serif-font;
-        a {
-          color: $white;
-        }
-      }
-      @media only screen and (min-width: 768px) {
-        h1 {
-          font-size: 55px;
-        }
-        .subheading {
-          font-size: 30px;
-        }
-      }
-    }
+// index
+.index-masthead {
+  padding: 5rem 0;
+  background-color: gray;
+  background-attachment: scroll;
+  position: relative;
+  background: url('https://picsum.photos/1000/?random')  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.index-masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  opacity: 0.3;
+}
+.index-masthead .site-heading {
+  padding: 200px 0 150px;
+  color: rgb(255, 255, 255);
+}
+@media only screen and (min-width: 768px) {
+.index-masthead .site-heading {
+    padding: 200px 0;
   }
+}
+.index-masthead .site-heading {
+  text-align: center;
+}
+.index-masthead .site-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+.index-masthead .site-heading .subheading {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media only screen and (min-width: 768px) {
+.index-masthead .site-heading h1 {
+    font-size: 80px;
+  }
+}
 
+// about
+.about-masthead {
+  padding: 5rem 0;
+  background: no-repeat center center;
+  background-color: gray;
+  background-attachment: scroll;
+  position: relative;
+  background: url('https://picsum.photos/1001/?random') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.about-masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+}
+.about-masthead .page-heading {
+padding: 200px 0 150px;
+color: white;
+}
+@media only screen and (min-width: 768px) {
+.about-masthead .page-heading {
+  padding: 200px 0;
+}
+}
+.about-masthead .page-heading {
+text-align: center;
+}
+.about-masthead .page-heading h1 {
+font-size: 50px;
+margin-top: 0;
+}
+.about-masthead .page-heading .subheading {
+font-size: 24px;
+font-weight: 300;
+line-height: 1.1;
+display: block;
+margin: 10px 0 0;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media only screen and (min-width: 768px) {
+.about-masthead .page-heading h1 {
+  font-size: 80px;
+}
+}
+
+// post
+.post-masthead {
+  padding: 5rem 0;
+  background: no-repeat center center;
+  background-color: gray;
+  background-attachment: scroll;
+  position: relative;
+  background: url('https://picsum.photos/1002/?random') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.post-masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+}
+.post-masthead .post-heading h1 {
+  font-size: 35px;
+}
+.post-masthead .post-heading .meta,
+.post-masthead .post-heading .subheading {
+  line-height: 1.1;
+  display: block;
+}
+.post-masthead .post-heading .subheading {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0 30px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.post-masthead .post-heading .meta {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Lora", "Times New Roman", serif;
+}
+.post-masthead .post-heading .meta a {
+  color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  .post-masthead .post-heading h1 {
+    font-size: 55px;
+  }
+  .post-masthead .post-heading .subheading {
+    font-size: 30px;
+  }
+}
+
+// contact
+.contact-masthead {
+  padding: 5rem 0;
+  background: no-repeat center center;
+  background-color: gray;
+  background-attachment: scroll;
+  position: relative;
+  background: url('https://picsum.photos/1003/?random') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.contact-masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+}
+.contact-masthead .page-heading {
+padding: 200px 0 150px;
+color: white;
+}
+@media only screen and (min-width: 768px) {
+.contact-masthead .page-heading {
+  padding: 200px 0;
+}
+}
+.contact-masthead .page-heading {
+text-align: center;
+}
+.contact-masthead .page-heading h1 {
+font-size: 50px;
+margin-top: 0;
+}
+.contact-masthead .page-heading .subheading {
+font-size: 24px;
+font-weight: 300;
+line-height: 1.1;
+display: block;
+margin: 10px 0 0;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media only screen and (min-width: 768px) {
+.contact-masthead .page-heading h1{
+  font-size: 80px;
+}
+}
   // _contact.scss
-
+.contact-container {
+  margin: 35px 0 0;
+}
 .floating-label-form-group {
     font-size: 14px;
     position: relative;
@@ -341,6 +463,7 @@ a {
       @include serif-font;
       &::-webkit-input-placeholder {
         color: $gray-600;
+        opacity: .75;
         @include serif-font;
       }
     }
@@ -368,13 +491,14 @@ a {
   .floating-label-form-group-with-value {
     label {
       top: 0;
-      opacity: 1;
+      opacity: .5;
     }
   }
   
   .floating-label-form-group-with-focus {
     label {
       color: $primary;
+      opacity: .5;
     }
   }
   form .form-group:first-child .floating-label-form-group {
