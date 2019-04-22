@@ -99,7 +99,7 @@ a {
     }
 }
 
-.btn {
+.btn, .btn-primary, .btn-primary.disabled, .btn-primary:disabled  {
   font-size: 14px;
   font-weight: 800;
   padding: 15px 25px;
@@ -110,7 +110,9 @@ a {
   border-image-width: 0;
   background-color: $indigo;
   background-image: none;
+  background:  $indigo;
 }
+
 
 .btn:hover {
   font-size: 14px;
@@ -237,7 +239,7 @@ a {
   background-color: gray;
   background-attachment: scroll;
   position: relative;
-  background: url('https://picsum.photos/1000/?random')  no-repeat center center fixed;
+  background: url('/img/1000.jpg')  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -289,7 +291,7 @@ a {
   background-color: gray;
   background-attachment: scroll;
   position: relative;
-  background: url('https://picsum.photos/1001/?random') no-repeat center center fixed;
+  background: url('/img/1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -341,7 +343,7 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: gray;
   background-attachment: scroll;
   position: relative;
-  background: url('https://picsum.photos/1002/?random') no-repeat center center fixed;
+  background: url('/img/stars.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -357,10 +359,12 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   opacity: 0.5;
 }
 .post-masthead .post-heading h1 {
+  color: white;
   font-size: 35px;
 }
 .post-masthead .post-heading .meta,
 .post-masthead .post-heading .subheading {
+  color: rgba(255, 255, 255, 0.664);
   line-height: 1.1;
   display: block;
 }
@@ -395,7 +399,7 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: gray;
   background-attachment: scroll;
   position: relative;
-  background: url('https://picsum.photos/1003/?random') no-repeat center center fixed;
+  background: url('/img/10001.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -504,3 +508,8 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   form .form-group:first-child .floating-label-form-group {
     border-top: 1px solid $gray-300;
   }
+
+  .titleText {
+    text-shadow: rgba(12, 0, 32, 0.5)  0px 0px 5px, rgba(27, 0, 70, 0.5) 0px 0px 10px, 2px 2px 1px rgb(255, 255, 255);
+    color: #FFFFFF;
+    }
