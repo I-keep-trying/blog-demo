@@ -3,7 +3,8 @@
   "name": "blog-demo",
   "version": "1.0.0",
   "scripts": {
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "deploy": "node deploy"
   },
   "browserslist": [
     "last 2 versions"
@@ -41,7 +42,7 @@
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-prettier": "^3.0.1",
-    "gulp": "4.0.0",
+    "gulp": "^4.0.1",
     "gulp-autoprefixer": "6.0.0",
     "gulp-clean-css": "4.0.0",
     "gulp-header": "2.0.7",

@@ -21,7 +21,7 @@ function browserSync(done) {
     },
     port: 3000,
     notify: false,
-    browser: ['chrome', 'iexplore'],
+    browser: ['chrome'],
   })
   done()
 }
@@ -99,16 +99,6 @@ function watchFiles() {
   gulp.watch('./js/**/*', js)
   gulp.watch('./**/*.html', browserSyncReload)
 }
-
-//git commit
-const gitConfig = 'git add . && git commit -m "netlify deploy" && git push'
-
-function git() {
-  return gulp.pipe(exec(gitConfig))
-}
-const commit = gulp.series(git)
-exports.commit = commit
-exports.git = git
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules)
