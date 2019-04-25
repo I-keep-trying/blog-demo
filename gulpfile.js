@@ -7,11 +7,10 @@ const cleanCSS = require('gulp-clean-css')
 const del = require('del')
 const gulp = require('gulp')
 const merge = require('merge-stream')
+const plumber = require('gulp-plumber')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 const uglify = require('gulp-uglify')
-const exec = require('child_process').exec // run command-line programs from gulp
-const execSync = require('child_process').execSync // command-line reports
 
 // BrowserSync
 function browserSync(done) {
@@ -21,7 +20,7 @@ function browserSync(done) {
     },
     port: 3000,
     notify: false,
-    browser: ['chrome'],
+    browser: ['chrome', 'iexplore'],
   })
   done()
 }
@@ -54,9 +53,9 @@ function modules() {
 function css() {
   return gulp
     .src('./scss/**/*.scss')
+    .pipe(plumber())
     .pipe(
       sass({
-        sourcemaps: true,
         outputStyle: 'expanded',
         includePaths: './node_modules',
       })
@@ -82,7 +81,7 @@ function css() {
 // JS task
 function js() {
   return gulp
-    .src(['./js/*.js'])
+    .src(['./js/*.js','!./js/*.min.js'])
     .pipe(uglify())
     .pipe(
       rename({
@@ -97,7 +96,7 @@ function js() {
 function watchFiles() {
   gulp.watch('./scss/**/*', css)
   gulp.watch('./js/**/*', js)
-  gulp.watch('./**/*.html', browserSyncReload)
+  gulp.watch("./*.html").on('change', browserSyncReload)
 }
 
 // Define complex tasks

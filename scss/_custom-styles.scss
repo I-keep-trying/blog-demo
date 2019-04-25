@@ -76,8 +76,8 @@
 
 body {
     font-size: 20px;
-    color: $gray-900;
     @include serif-font;
+    background-color: rgb(0, 0, 0);
 }
 
 h1,
@@ -91,11 +91,11 @@ h6 {
 }
 
 a {
-    color: $gray-900;
+    color: $gray-100;
     @include transition-all;
     &:focus,
     &:hover {
-        color: $primary;
+        color: $indigo;
     }
 }
 
@@ -127,6 +127,11 @@ a {
   background-image: none;
 }
   
+.fa-stack {
+  color: $black;
+
+}
+
 .fa-stack:hover {
   color: $indigo;
 }
@@ -206,7 +211,7 @@ a {
           color: $gray-900;
           &:focus,
           &:hover {
-            color: $primary;
+            color: $indigo;
           }
         }
         .navbar-nav {
@@ -215,7 +220,7 @@ a {
               color: $gray-900;
               &:focus,
               &:hover {
-                color: $primary;
+                color: $indigo;
               }
             }
           }
@@ -233,12 +238,19 @@ a {
   }
 
   // _masthead
+  .titleText {
+    color: #FFFFFF;
+    font-size: 50px;
+    margin-top: 0;
+    text-align: center;
+    }
+
 // index
 .index-masthead {
-  padding: 5rem 0;
-  background-color: gray;
-  background-attachment: scroll;
   position: relative;
+  padding: 10rem 0 30rem 0;
+  background-attachment: scroll;
+  //position: relative;
   background: url('/img/1000.jpg')  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -254,23 +266,23 @@ a {
   background-color: #ffffff;
   opacity: 0.3;
 }
-.index-masthead .site-heading {
-  padding: 200px 0 150px;
-  color: rgb(255, 255, 255);
-}
-@media only screen and (min-width: 768px) {
-.index-masthead .site-heading {
-    padding: 200px 0;
-  }
-}
-.index-masthead .site-heading {
+.hero-message {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 30%);
+  z-index: 2;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
   text-align: center;
 }
-.index-masthead .site-heading h1 {
-  font-size: 50px;
-  margin-top: 0;
-}
-.index-masthead .site-heading .subheading {
+
+.subheading {
   font-size: 24px;
   font-weight: 300;
   line-height: 1.1;
@@ -279,15 +291,14 @@ a {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 @media only screen and (min-width: 768px) {
-.index-masthead .site-heading h1 {
+.titleText {
     font-size: 80px;
   }
 }
 
 // about
 .about-masthead {
-  padding: 5rem 0;
-  background: no-repeat center center;
+  padding: 0 0 20rem 0;
   background-color: gray;
   background-attachment: scroll;
   position: relative;
@@ -338,9 +349,8 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // post
 .post-masthead {
-  padding: 5rem 0;
-  background: no-repeat center center;
-  background-color: gray;
+  position: relative;
+  padding: 10rem 0 30rem 0;
   background-attachment: scroll;
   position: relative;
   background: url('/img/stars.jpg') no-repeat center center fixed;
@@ -355,8 +365,8 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #212529;
-  opacity: 0.5;
+  background-color: #b7dbff;
+  opacity: 0.2;
 }
 .post-masthead .post-heading h1 {
   color: white;
@@ -391,11 +401,59 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 30px;
   }
 }
+.post-preview {
+  > a {
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      color: $indigo;
+    }
+    > .post-title {
+      color: $gray-300;
+      font-size: 30px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      &:focus,
+      &:hover {
+        text-decoration: none;
+        color: $indigo;
+      }
+    }
+    > .post-subtitle {
+      color: $gray-600;
+      font-weight: 300;
+      margin: 0 0 10px;
+    }
+  }
+  > .post-meta {
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Heebo';
+    margin-top: 0;
+    color: $gray-600;
+    > a {
+      text-decoration: none;
+      color: $gray-700;
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+        color: $indigo;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    > a {
+      > .post-title {
+        font-size: 36px;
+      }
+    }
+  }
+}
 
 // contact
+
 .contact-masthead {
-  padding: 5rem 0;
-  background: no-repeat center center;
+  padding: 0 0 20rem 0;
   background-color: gray;
   background-attachment: scroll;
   position: relative;
@@ -447,6 +505,9 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 .contact-container {
   margin: 35px 0 0;
 }
+.form-control:focus {
+  color: white;
+}
 .floating-label-form-group {
     font-size: 14px;
     position: relative;
@@ -455,6 +516,7 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-bottom: 1px solid $gray-300;
     input,
     textarea {
+      color: white;
       font-size: 1.5em;
       position: relative;
       z-index: 1;
@@ -467,7 +529,7 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
       @include serif-font;
       &::-webkit-input-placeholder {
         color: $gray-600;
-        opacity: .75;
+        //opacity: .75;
         @include serif-font;
       }
     }
@@ -491,7 +553,7 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
       margin: 15px 0;
     }
   }
-  
+
   .floating-label-form-group-with-value {
     label {
       top: 0;
@@ -501,7 +563,7 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   
   .floating-label-form-group-with-focus {
     label {
-      color: $primary;
+      color: $gray-300;
       opacity: .5;
     }
   }
@@ -509,7 +571,183 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-top: 1px solid $gray-300;
   }
 
-  .titleText {
-    text-shadow: rgba(12, 0, 32, 0.5)  0px 0px 5px, rgba(27, 0, 70, 0.5) 0px 0px 10px, 2px 2px 1px rgb(255, 255, 255);
-    color: #FFFFFF;
-    }
+  // social icons
+  .copyright {
+    font-size: 0.85em;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 20px 0;
+  }
+  .footer {
+    background-color: #0e1a25;
+  }
+  .icons-group {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    //background-color: #0e1a25;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    //align-items: right;
+    height: 11vh;
+  }
+  
+  .icon {
+    width: 11vw;
+    max-height: 11vh;
+    flex-shrink: 1;
+  }
+  
+  .behance {
+    color: #d99126;
+    fill: #d99126;
+  }
+  .behance:hover,
+  .behance:active {
+    background: #d99126;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+  
+  .codepen {
+    color: #d9b526;
+    fill: #d9b526;
+  }
+  .codepen:hover,
+  .codepen:active {
+    background: #d9b526;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+  
+  .email {
+    color: #6ed926;
+    fill: #6ed926;
+  }
+  .email:hover,
+  .email:active {
+    background: #6ed926;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+  
+  .facebook {
+    color: #26d926;
+    fill: #26d926;
+  }
+  .facebook:hover,
+  .facebook:active {
+    background: #26d926;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+  
+  .github {
+    color: #2626d9;
+    fill: #2626d9;
+  }
+  .github:hover,
+  .github:active {
+    background: #2626d9;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+  
+  .instagram {
+    color: #6e26d9;
+    fill: #6e26d9;
+  }
+  .instagram:hover,
+  .instagram:active {
+    background: #6e26d9;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+  
+  .twitter {
+    color: #d926b5;
+    fill: #d926b5;
+  }
+  .twitter:hover,
+  .twitter:active {
+    background: #d926b5;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+  
+  .youtube {
+    color: #d9266e;
+    fill: #d9266e;
+  }
+  .youtube:hover,
+  .youtube:active {
+    background: #d9266e;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+  
+  .yelp {
+    color: #d9264a;
+    fill: #d9264a;
+  }
+  .yelp:hover,
+  .yelp:active {
+    background: #d9264a;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }

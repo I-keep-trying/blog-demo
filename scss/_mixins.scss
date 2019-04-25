@@ -1,45 +1,45 @@
 // Mixins
 // Vendor
-@import "/vendor/bootstrap/scss/vendor/rfs";
+@import "./vendor/bootstrap/vendor/rfs";
 
 // Deprecate
-@import "/vendor/bootstrap/scss/mixins/deprecate";
+@import "./vendor/bootstrap/mixins/deprecate";
 
 // Utilities
-@import "/vendor/bootstrap/scss/mixins/breakpoints";
-@import "/vendor/bootstrap/scss/mixins/hover";
-@import "/vendor/bootstrap/scss/mixins/image";
-@import "/vendor/bootstrap/scss/mixins/badge";
-@import "/vendor/bootstrap/scss/mixins/resize";
-@import "/vendor/bootstrap/scss/mixins/screen-reader";
-@import "/vendor/bootstrap/scss/mixins/size";
-@import "/vendor/bootstrap/scss/mixins/reset-text";
-@import "/vendor/bootstrap/scss/mixins/text-emphasis";
-@import "/vendor/bootstrap/scss/mixins/text-hide";
-@import "/vendor/bootstrap/scss/mixins/text-truncate";
-@import "/vendor/bootstrap/scss/mixins/visibility";
+@import "./vendor/bootstrap/mixins/breakpoints";
+@import "./vendor/bootstrap/mixins/hover";
+@import "./vendor/bootstrap/mixins/image";
+@import "./vendor/bootstrap/mixins/badge";
+@import "./vendor/bootstrap/mixins/resize";
+@import "./vendor/bootstrap/mixins/screen-reader";
+@import "./vendor/bootstrap/mixins/size";
+@import "./vendor/bootstrap/mixins/reset-text";
+@import "./vendor/bootstrap/mixins/text-emphasis";
+@import "./vendor/bootstrap/mixins/text-hide";
+@import "./vendor/bootstrap/mixins/text-truncate";
+@import "./vendor/bootstrap/mixins/visibility";
 
 // // Components
-@import "/vendor/bootstrap/scss/mixins/alert";
-@import "/vendor/bootstrap/scss/mixins/buttons";
-@import "/vendor/bootstrap/scss/mixins/caret";
-@import "/vendor/bootstrap/scss/mixins/pagination";
-@import "/vendor/bootstrap/scss/mixins/lists";
-@import "/vendor/bootstrap/scss/mixins/list-group";
-@import "/vendor/bootstrap/scss/mixins/nav-divider";
-@import "/vendor/bootstrap/scss/mixins/forms";
-@import "/vendor/bootstrap/scss/mixins/table-row";
+@import "./vendor/bootstrap/mixins/alert";
+@import "./vendor/bootstrap/mixins/buttons";
+@import "./vendor/bootstrap/mixins/caret";
+@import "./vendor/bootstrap/mixins/pagination";
+@import "./vendor/bootstrap/mixins/lists";
+@import "./vendor/bootstrap/mixins/list-group";
+@import "./vendor/bootstrap/mixins/nav-divider";
+@import "./vendor/bootstrap/mixins/forms";
+@import "./vendor/bootstrap/mixins/table-row";
 
 // // Skins
-@import "/vendor/bootstrap/scss/mixins/background-variant";
-@import "/vendor/bootstrap/scss/mixins/border-radius";
-@import "/vendor/bootstrap/scss/mixins/box-shadow";
-@import "/vendor/bootstrap/scss/mixins/gradients";
-@import "/vendor/bootstrap/scss/mixins/transition";
+@import "./vendor/bootstrap/mixins/background-variant";
+@import "./vendor/bootstrap/mixins/border-radius";
+@import "./vendor/bootstrap/mixins/box-shadow";
+@import "./vendor/bootstrap/mixins/gradients";
+@import "./vendor/bootstrap/mixins/transition";
 
 // // Layout
-@import "/vendor/bootstrap/scss/mixins/clearfix";
-@import "/vendor/bootstrap/scss/mixins/grid-framework";
-@import "/vendor/bootstrap/scss/mixins/grid";
-@import "/vendor/bootstrap/scss/mixins/float";
+@import "./vendor/bootstrap/mixins/clearfix";
+@import "./vendor/bootstrap/mixins/grid-framework";
+@import "./vendor/bootstrap/mixins/grid";
+@import "./vendor/bootstrap/mixins/float";
 

@@ -2,3 +2,6 @@ Use https://picsum.photos/1000/?random to get a new picture
 
 1. run "gulp watch" or just "gulp" to build site
 2. run "npm run deploy" to push to git and netlify in one step
+
+c:\Users\Dell\webdev\blog\node_modules\eslint\lib\api.js
+no such file or directory, open 'c:\Users\Dell\webdev\node_modules\eslint-plugin-react\index.js'
