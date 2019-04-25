@@ -24,7 +24,7 @@ function browserSync(done) {
 
 ### In order to suppress the (imo) annoying browser-sync notification that pops up every single time, the `notify: false` flag was added, and to visually verify style changes wouldn't break Internet Explorer, I added it to the browser list.
 
-### I changed the source directory in the `modules` function from bootstrap's /css to /scss, so I could grap styles from the /vendor directory more easily and make any changes I want.
+### I changed the source directory in the `modules` function from bootstrap's /css to /scss, so I could grab styles from the /vendor directory more easily and make any changes I want.
 
 ### I changed the source directory in the `js` function to include all the javascript, because, why not???
 
