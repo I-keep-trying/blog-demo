@@ -17,6 +17,8 @@ css/clean-blog.min.css
 css/theme.css
 js/clean-blog.js
 js/contact_me.js
+js/contact_me.min.js
 js/jqBootstrapValidation.js
+js/jqBootstrapValidation.min.js
 vendor
 notes.txt
