@@ -22,3 +22,4 @@ js/jqBootstrapValidation.js
 js/jqBootstrapValidation.min.js
 vendor
 notes.txt
+netlify.toml

@@ -54,9 +54,9 @@
   }
   
   @mixin transition-all() {
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    transition: all 0.2s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
   }
   
   @mixin background-cover() {
@@ -105,7 +105,7 @@ a {
   padding: 15px 25px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 0;
+  border-radius: 25px;
   @include sans-serif-font;
   border-image-width: 0;
   background-color: $indigo;
@@ -114,17 +114,19 @@ a {
 }
 
 
-.btn:hover {
+.btn:hover,  .btn-primary:hover, .btn-primary.disabled:hover {
   font-size: 14px;
   font-weight: 800;
   padding: 15px 25px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 0;
+  border-radius: 25px;
   @include sans-serif-font;
   border-image-width: 0;
   background-color: $indigo-dark;
   background-image: none;
+  box-shadow: 0px 0px 15px #6610f2;
+  text-shadow: 0px 0px 5px white;
 }
   
 .fa-stack {
@@ -250,7 +252,6 @@ a {
   position: relative;
   padding: 10rem 0 30rem 0;
   background-attachment: scroll;
-  //position: relative;
   background: url('/img/1000.jpg')  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -272,12 +273,12 @@ a {
   color: white;
   font-weight: bold;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 30%);
-  z-index: 2;
+ // top: 70%;
+  left: 0%;
+  transform: translate(0%, 25%);
+ // z-index: 2;
   width: 100%;
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 2.5rem;
   text-align: center;
 }
@@ -583,7 +584,7 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   .icons-group {
     padding: 0;
-    margin: 0;
+    margin-top: 2rem;
     list-style: none;
     //background-color: #0e1a25;
     display: flex;
@@ -701,6 +702,23 @@ font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
   }
   
+  .paypal {
+    color:  #264ad9;
+    fill:  #264ad9;
+  }
+  .paypal:hover,
+  .paypal:active {
+    background:  #264ad9;
+    border-radius: 100%;
+    color: #0e1a25;
+    fill: #0e1a25;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  }
+
   .twitter {
     color: #d926b5;
     fill: #d926b5;

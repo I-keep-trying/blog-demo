@@ -10902,8 +10902,8 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: #f8f9fa;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 a:focus, a:hover {
@@ -10916,7 +10916,7 @@ a:focus, a:hover {
   padding: 15px 25px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 0;
+  border-radius: 25px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-image-width: 0;
   background-color: #6610f2;
@@ -10924,17 +10924,20 @@ a:focus, a:hover {
   background: #6610f2;
 }
 
-.btn:hover {
+.btn:hover, .btn-primary:hover, .btn-primary.disabled:hover {
   font-size: 14px;
   font-weight: 800;
   padding: 15px 25px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 0;
+  border-radius: 25px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-image-width: 0;
   background-color: #470ca5;
   background-image: none;
+  -webkit-box-shadow: 0px 0px 15px #6610f2;
+  box-shadow: 0px 0px 15px #6610f2;
+  text-shadow: 0px 0px 5px white;
 }
 
 .fa-stack {
@@ -11065,13 +11068,11 @@ a:focus, a:hover {
   color: white;
   font-weight: bold;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 30%);
-  transform: translate(-50%, 30%);
-  z-index: 2;
+  left: 0%;
+  -webkit-transform: translate(0%, 25%);
+  transform: translate(0%, 25%);
   width: 100%;
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 2.5rem;
   text-align: center;
 }
@@ -11388,7 +11389,7 @@ form .form-group:first-child .floating-label-form-group {
 
 .icons-group {
   padding: 0;
-  margin: 0;
+  margin-top: 2rem;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11512,6 +11513,25 @@ form .form-group:first-child .floating-label-form-group {
 .instagram:hover,
 .instagram:active {
   background: #6e26d9;
+  border-radius: 100%;
+  color: #0e1a25;
+  fill: #0e1a25;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+  -webkit-transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s, transform 0.5s ease-out;
+  transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.paypal {
+  color: #264ad9;
+  fill: #264ad9;
+}
+
+.paypal:hover,
+.paypal:active {
+  background: #264ad9;
   border-radius: 100%;
   color: #0e1a25;
   fill: #0e1a25;

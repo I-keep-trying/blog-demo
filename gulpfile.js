@@ -96,7 +96,7 @@ function js() {
 function watchFiles() {
   gulp.watch('./scss/**/*', css)
   gulp.watch('./js/**/*', js)
-  gulp.watch("./*.html").on('change', browserSyncReload)
+  gulp.watch('./*.html', browserSyncReload)
 }
 
 // Define complex tasks
