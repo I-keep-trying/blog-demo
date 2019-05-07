@@ -1,0 +1,14 @@
+netlify link will connect a site in app.netlify.com to this folder
+
+? How do you want to link this folder to a site? Use current git remote url https://github.com/I-keep-trying/blog-demo
+
+Fetching sites and looking for site connected to "https://github.com/I-keep-trying/blog-demo" repo
+
+Directory Linked
+
+Admin url: https://app.netlify.com/sites/objective-fermi-d274ea
+Site url:  https://objective-fermi-d274ea.netlify.com
+
+Site id saved to C:\Users\Dell\webdev\blog\.netlify\state.json
+
+You can now run other `netlify` cli commands in this directory
