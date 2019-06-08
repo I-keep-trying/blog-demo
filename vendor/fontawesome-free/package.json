@@ -2,7 +2,7 @@
   "_args": [
     [
       "@fortawesome/fontawesome-free@5.8.1",
-      "C:\\Users\\Dell\\webdev\\blog"
+      "C:\\Users\\Owner\\webdev\\blog-demo"
     ]
   ],
   "_from": "@fortawesome/fontawesome-free@5.8.1",
@@ -27,7 +27,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.8.1.tgz",
   "_spec": "5.8.1",
-  "_where": "C:\\Users\\Dell\\webdev\\blog",
+  "_where": "C:\\Users\\Owner\\webdev\\blog-demo",
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",
