@@ -20,7 +20,8 @@ function browserSync(done) {
     },
     port: 3000,
     notify: false,
-    browser: ['chrome', 'iexplore'],
+    //browser: ['chrome', 'iexplore'],
+    browser: ['chrome'],
   })
   done()
 }
